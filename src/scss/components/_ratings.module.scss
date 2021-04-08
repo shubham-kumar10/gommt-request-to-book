@@ -1,0 +1,47 @@
+@import "../variables";
+@import url("https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap");
+
+.rating {
+  display: inline-flex;
+
+  &__icon {
+    display: inline-flex;
+    padding: 4px;
+    font-family: "Ma Shan Zheng";
+    background-color: $color-danger;
+    border-radius: 5px;
+    color: white;
+  }
+
+  &__value {
+    margin: 0 5px;
+    border-radius: 5px;
+    display: inline-flex;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+
+    &.good {
+      background-color: $color-success;
+    }
+
+    &.bad {
+      background-color: $color-danger;
+    }
+
+    &.excellent {
+      background-color: $color-success;
+    }
+
+    &.medium {
+      background-color: $color-warning;
+    }
+  }
+
+  &__count {
+    font-size: smaller;
+    margin: 5px 0;
+  }
+}
