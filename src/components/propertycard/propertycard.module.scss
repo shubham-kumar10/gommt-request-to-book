@@ -1,0 +1,69 @@
+@import "../../scss/variables";
+
+.card {
+  display: flex;
+  border: solid 1px $color-gray-light;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 1rem;
+
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+
+    &-selected {
+      width: 218px;
+      margin: 0rem;
+    }
+
+    &-thumbnails {
+      margin: 0rem;
+      height: 50;
+      width: 56;
+
+      & > img {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &-amenities {
+      display: flex;
+    }
+
+    &-icons {
+      display: flex;
+    }
+
+    &-name {
+      display: flex;
+      justify-content: space-between;
+
+      &.summary {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+    }
+
+    &-name > h3 {
+      margin: 0;
+    }
+
+    &-price {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+}
