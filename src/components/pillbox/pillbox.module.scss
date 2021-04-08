@@ -1,0 +1,57 @@
+@import "../../scss/variables";
+
+.pillbox {
+  border-radius: 5px;
+  border: 1px solid;
+  display: inline-block;
+  padding: 0 5px;
+  margin: 5px;
+  text-transform: uppercase;
+
+  &.warn {
+    color: $color-warning;
+  }
+
+  &.primary {
+    color: $color-primary;
+  }
+
+  &.info {
+    color: $color-info;
+  }
+
+  &.danger {
+    color: $color-danger;
+  }
+
+  &.light {
+    color: $color-light;
+  }
+
+  &.dark {
+    color: $color-dark;
+  }
+
+  &.success {
+    color: $color-success;
+  }
+
+  &.secondary {
+    color: $color-secondary;
+  }
+}
+.small {
+  font-size: small;
+}
+
+.medium {
+  font-size: medium;
+}
+
+.large {
+  font-size: large;
+}
+
+.small {
+  font-size: small;
+}
