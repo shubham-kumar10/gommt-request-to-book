@@ -1,13 +1,23 @@
 @import "./scss/variables";
+@import "./scss/utils";
 @import "./components/pillbox/pillbox.module.scss";
 @import "./components/propertycard/propertycard.module.scss";
 @import "./components/button/button.module.scss";
 @import "./scss/components/ratings.module";
 @import "./components/mmt-assured/mmt-assured.module.scss";
+@import "./scss/components/booking";
+@import "./scss/components/tag";
+@import "./scss/components/banner";
+@import "./scss/components/header";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 html {
   font-size: 100%;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.material-icons {
+  color: $color-primary;
 }

@@ -1,0 +1,29 @@
+@import "../variables";
+
+.tag {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.danger {
+  color: $color-danger;
+}
+
+.x-small {
+  font-size: x-small;
+}
+
+.medium {
+  font-size: medium;
+}
+
+.primary {
+  color: $color-primary;
+}
+
+.material-icons {
+  .x-small {
+    font-size: x-small;
+  }
+}

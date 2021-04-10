@@ -1,0 +1,14 @@
+.banner {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  margin: 5px;
+  border-radius: 5px;
+
+  p {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+}

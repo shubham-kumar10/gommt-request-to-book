@@ -1,16 +1,15 @@
 import "./App.scss";
+import Booking from "./components/Booking";
+import Header from "./components/Header";
 import Pillbox from "./components/pillbox/Pillbox";
 import PropertyCard from "./components/propertycard/PropertyCard";
 
 function App() {
   return (
     <div className="App">
-      <Pillbox type="warn" text="hello" size="small" />
-      <Pillbox type="primary" text="hello" size="medium" />
-      <Pillbox type="info" text="hello" size="large" />
-      <Pillbox type="danger" text="hello" size="small" />
-      <Pillbox type="success" text="hello" size="small" />
+      <Header />
       <PropertyCard />
+      <Booking name="John Doe" />
     </div>
   );
 }

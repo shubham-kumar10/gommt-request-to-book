@@ -1,17 +1,50 @@
 import React from "react";
-import Button from "../button/Button";
-import "../../scss/components/_booking.scss";
-import Pillbox from "../pillbox/Pillbox";
+import Button from "./button/Button";
+import "../scss/components/_booking.scss";
+import Pillbox from "./pillbox/Pillbox";
+import Tag from "./Tag";
+import Banner from "./Banner";
 
-function Booking() {
+function Booking({
+  id,
+  user,
+  name,
+  noOfGuests,
+  checkIn,
+  checkOut,
+  duration,
+  price,
+  isPaid,
+}) {
   return (
     <div className="booking">
       <section className="booking__header">
         <div className="booking__header-icons">
           <Pillbox text="booking request" size="small" type="primary" />
+          <Tag
+            text="Expires in 12 hours"
+            startIcon="timer"
+            size="x-small"
+            color="danger"
+          />
         </div>
-        <div className="booking__header-details"></div>
-        <div></div>
+        <div className="booking__header-details">
+          {user.name}
+          <Tag
+            text="MMTBLACK"
+            startIcon="assistant"
+            endIcon="info"
+            size="x-small"
+            color="danger"
+          />
+        </div>
+        <div>
+          <Banner
+            icon="info"
+            bgcolor="dark"
+            text="MMT premium member he is lorem imspspidfjsifj dsfhdsjfhsdjfhsdjf "
+          />
+        </div>
       </section>
       <section className="booking__details">
         <table>
@@ -23,23 +56,26 @@ function Booking() {
           <tbody>
             <tr>
               <td>Property Name</td>
-              <td className="text-right bold">Goa Resort</td>
+              <td className="text-right bold">{name}</td>
             </tr>
             <tr>
               <td>Check In</td>
-              <td className="text-right bold">22 Mar</td>
+              <td className="text-right bold">{checkIn}</td>
             </tr>
             <tr>
               <td>Check out</td>
-              <td className="text-right bold">31 Mar</td>
+              <td className="text-right bold">{checkOut}</td>
             </tr>
             <tr>
               <td>No. of Guest(s)</td>
-              <td className="text-right bold">2 Adults</td>
+              <td className="text-right bold">
+                {noOfGuests.adults},
+                {noOfGuests.children > 0 && `${noOfGuests.children} Children`}
+              </td>
             </tr>
             <tr>
               <td>Stay Duration</td>
-              <td className="text-right bold">9 Nights</td>
+              <td className="text-right bold">{duration}Nights</td>
             </tr>
             <tr>
               <td>Meal Plan</td>
@@ -47,7 +83,7 @@ function Booking() {
             </tr>
             <tr>
               <td>Payment Status</td>
-              <td className="text-right bold">Paid</td>
+              {isPaid && <td className="text-right bold">Paid</td>}
             </tr>
           </tbody>
         </table>
@@ -56,11 +92,11 @@ function Booking() {
         <table>
           <tr>
             <td className="text-left">Booking Amount</td>
-            <td className="text-right">13,700</td>
+            <td className="text-right">{price}</td>
           </tr>
           <tr>
             <td className="text-left">Your Share Of Earnings</td>
-            <td className="text-right">400</td>
+            <td className="text-right">{0.13 * price}</td>
           </tr>
         </table>
       </section>
