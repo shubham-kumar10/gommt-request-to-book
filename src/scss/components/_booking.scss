@@ -1,0 +1,68 @@
+@import "../variables";
+
+.booking {
+  display: flex;
+  flex-direction: column;
+  background-color: darkgray;
+
+  &__header {
+    background-color: white;
+    margin-bottom: 10px;
+  }
+
+  &__details {
+    background-color: white;
+    margin-bottom: 10px;
+
+    table {
+      width: 100%;
+      padding: 15px;
+      color: $color-gray;
+    }
+
+    th {
+      color: $color-gray-darker;
+    }
+    tr {
+      padding: 5px 0;
+    }
+
+    td {
+      padding: 5px 0;
+      font-size: 14px;
+    }
+  }
+
+  &__amount {
+    background-color: white;
+    margin-bottom: 10px;
+    table {
+      width: 100%;
+      padding: 15px;
+      color: $color-gray-darker;
+    }
+
+    td {
+      padding: 5px 0;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  &__footer {
+    background-color: white;
+    padding: 20px;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: $color-gray-darker;
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: end;
+    }
+  }
+}
