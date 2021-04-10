@@ -1,0 +1,13 @@
+@import "./scss/variables";
+@import "./components/pillbox/pillbox.module.scss";
+@import "./components/propertycard/propertycard.module.scss";
+@import "./components/button/button.module.scss";
+@import "./scss/components/ratings.module";
+@import "./components/mmt-assured/mmt-assured.module.scss";
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

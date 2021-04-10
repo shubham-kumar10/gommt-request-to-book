@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import Pillbox from "./components/pillbox/Pillbox";
+import PropertyCard from "./components/propertycard/PropertyCard";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Pillbox type="warn" text="hello" size="small" />
+      <Pillbox type="primary" text="hello" size="medium" />
+      <Pillbox type="info" text="hello" size="large" />
+      <Pillbox type="danger" text="hello" size="small" />
+      <Pillbox type="success" text="hello" size="small" />
+      <PropertyCard />
     </div>
   );
 }
