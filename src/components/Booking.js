@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "./button/Button";
+import Button from "./Button";
 import "../scss/components/_booking.scss";
-import Pillbox from "./pillbox/Pillbox";
+import Pillbox from "./Pillbox";
 import Tag from "./Tag";
 import Banner from "./Banner";
 

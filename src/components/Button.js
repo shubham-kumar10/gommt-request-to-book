@@ -1,4 +1,4 @@
-import "./button.module.scss";
+import "../scss/components/_button.scss";
 
 export default function Button({
   text,

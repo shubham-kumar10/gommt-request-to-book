@@ -1,8 +1,9 @@
 import React from "react";
-import Button from "../button/Button";
-import MMTAssured from "../mmt-assured/MMTAssured";
-import Rating from "../Rating";
-import "./propertycard.module.scss";
+import Button from "./Button";
+import MMTAssured from "./MMTAssured";
+import Rating from "./Rating";
+import "../scss/components/_propertycard.scss";
+import { addBookingRequest } from "../mock-apis/book-request.mock";
 
 function PropertyCard({
   id,
@@ -13,17 +14,20 @@ function PropertyCard({
   amenities,
   images,
 }) {
+  function addNewBooking() {
+    addBookingRequest();
+  }
   return (
     <div className="card">
       <section className="card__images">
         <figure className="card__images-selected">
-          <img src="https://source.unsplash.com/random/218x218" alt="" />
+          {images.length > 0 && (
+            <img src={images[0].url} alt={images[0].desc} />
+          )}
         </figure>
         <figure className="card__images-thumbnails">
-          <img src="https://source.unsplash.com/random/50x50" alt="" />
-          <img src="https://source.unsplash.com/random/50x50" alt="" />
-          <img src="https://source.unsplash.com/random/50x50" alt="" />
-          <img src="https://source.unsplash.com/random/50x50" alt="" />
+          {images.length > 0 &&
+            images.map((image) => <img src={image.url} alt={image.desc} />)}
         </figure>
       </section>
       <section className="card__details">
@@ -40,7 +44,7 @@ function PropertyCard({
         </section>
         <ul className="card__Details-amenities">
           {amenities.map((amenity) => (
-            <li key={amenity.id}>{amenity}</li>
+            <li key={amenity.id}>{amenity.name}</li>
           ))}
         </ul>
         <section className="card__details-price">

@@ -1,5 +1,5 @@
 import React from "react";
-import "../scss/components/_ratings.module.scss";
+import "../scss/components/_ratings.scss";
 
 function Rating() {
   return (

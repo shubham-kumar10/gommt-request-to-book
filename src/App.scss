@@ -1,10 +1,10 @@
 @import "./scss/variables";
 @import "./scss/utils";
-@import "./components/pillbox/pillbox.module.scss";
-@import "./components/propertycard/propertycard.module.scss";
-@import "./components/button/button.module.scss";
-@import "./scss/components/ratings.module";
-@import "./components/mmt-assured/mmt-assured.module.scss";
+@import "./scss/components/pillbox";
+@import "./scss/components/propertycard";
+@import "./scss/components/button";
+@import "./scss/components/ratings";
+@import "./scss/components/mmt-assured";
 @import "./scss/components/booking";
 @import "./scss/components/tag";
 @import "./scss/components/banner";

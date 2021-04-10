@@ -1,5 +1,5 @@
 import React from "react";
-import "./mmt-assured.module.scss";
+import "../scss/components/_mmt-assured.scss";
 
 function MMTAssured() {
   return <div className="mmtAssuredIcon">MMT Assured</div>;
