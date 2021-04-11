@@ -19,6 +19,11 @@
     &-selected {
       width: 218px;
       margin: 0rem;
+
+      @media only screen and (max-width: 600px) {
+        flex-grow: 1;
+        object-fit: fill;
+      }
     }
 
     &-thumbnails {

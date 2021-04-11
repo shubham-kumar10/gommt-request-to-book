@@ -19,13 +19,19 @@ function PropertyCard({
     <div className="card">
       <section className="card__images">
         <figure className="card__images-selected">
-          {images.length > 0 && (
-            <img src={images[0].url} alt={images[0].desc} />
-          )}
+          <img
+            src="https://source.unsplash.com/random/218x218"
+            alt="Random Hotels"
+          />
         </figure>
         <figure className="card__images-thumbnails">
-          {images.length > 0 &&
-            images.map((image) => <img src={image.url} alt={image.desc} />)}
+          {[1, 2, 3, 4].map((i) => (
+            <img
+              key={i}
+              src="https://source.unsplash.com/random/50x50"
+              alt="Random Hotels"
+            />
+          ))}
         </figure>
       </section>
       <section className="card__details">

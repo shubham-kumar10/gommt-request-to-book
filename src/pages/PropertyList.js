@@ -9,6 +9,7 @@ function PropertyList() {
     <div>
       {propertyList.map((property) => (
         <PropertyCard
+          key={property.id}
           id={property.id}
           user={property.user}
           name={property.name}
@@ -16,7 +17,7 @@ function PropertyList() {
           landmark={property.landmark}
           price={property.price}
           amenities={property.amenities}
-          images={[]}
+          images={property.images}
           rating={property.rating}
           totalRatings={property.totalRatings}
         />

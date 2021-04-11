@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header({ startIcon, endIcon }) {
   const [opened, setOpened] = useState(false);
@@ -17,22 +18,20 @@ function Header({ startIcon, endIcon }) {
             alt="MMT Logo"
           />
         </a>
-        <button className="toggle" onClick={toggle}>
+        <button className="header__toggle" onClick={toggle}>
           <i className="material-icons md-28">more_vert</i>
         </button>
       </div>
       <ul className={"header__links " + (opened ? "opened" : "closed")}>
         <li className="header__link">
-          <a href=".">Becoming a host</a>
+          <Link to="/signup">Becoming a host</Link>
+        </li>
+
+        <li className="header__link">
+          <Link to="/signup">Sign Up</Link>
         </li>
         <li className="header__link">
-          <a href=".">Help</a>
-        </li>
-        <li className="header__link">
-          <a href=".">Sign up</a>
-        </li>
-        <li className="header__link">
-          <a href=".">Log in</a>
+          <Link to="/signin">Login</Link>
         </li>
       </ul>
     </nav>
