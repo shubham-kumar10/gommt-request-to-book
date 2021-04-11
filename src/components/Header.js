@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { userContext } from "../context/UserContext";
 
 function Header({ startIcon, endIcon }) {
   const [opened, setOpened] = useState(false);
+  const { user, setUser } = useContext(userContext);
 
   function toggle() {
     setOpened(!opened);
+  }
+
+  function handleLogout() {
+    setUser(null);
   }
 
   return (
@@ -22,18 +28,35 @@ function Header({ startIcon, endIcon }) {
           <i className="material-icons md-28">more_vert</i>
         </button>
       </div>
-      <ul className={"header__links " + (opened ? "opened" : "closed")}>
-        <li className="header__link">
-          <Link to="/signup?isHost=true">Becoming a host</Link>
-        </li>
+      {!user ? (
+        <ul className={"header__links " + (opened ? "opened" : "closed")}>
+          <li className="header__link">
+            <Link to="/signup?isHost=true">Becoming a host</Link>
+          </li>
 
-        <li className="header__link">
-          <Link to="/signup?isHost=false">Sign Up</Link>
-        </li>
-        <li className="header__link">
-          <Link to="/signin">Login</Link>
-        </li>
-      </ul>
+          <li className="header__link">
+            <Link to="/signup?isHost=false">Sign Up</Link>
+          </li>
+          <li className="header__link">
+            <Link to="/signin">Login</Link>
+          </li>
+        </ul>
+      ) : (
+        <ul className={"header__links " + (opened ? "opened" : "closed")}>
+          {user.isHost ? (
+            <li className="header__link">
+              <Link to="/requests">Requests</Link>
+            </li>
+          ) : (
+            <li className="header__link">
+              <Link to="/signin">Your Bookings</Link>
+            </li>
+          )}
+          <li className="header__link" onClick={handleLogout}>
+            <Link to="/">Logout</Link>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 }

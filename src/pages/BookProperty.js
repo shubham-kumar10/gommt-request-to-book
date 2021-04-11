@@ -35,9 +35,23 @@ function BookProperty() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const duration = calculateNoOfDays(
+      new Date(booking.checkOut),
+      new Date(booking.checkIn)
+    );
+    booking.duration = duration;
     addBookingRequest(booking);
     history.push("/");
   }
+
+  function calculateNoOfDays(date2, date1) {
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    console.log(diffTime + " milliseconds");
+    console.log(diffDays + " days");
+    return diffDays;
+  }
+
   return (
     <div className="form">
       <h3>Booking Details</h3>

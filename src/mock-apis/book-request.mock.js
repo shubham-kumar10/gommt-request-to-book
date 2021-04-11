@@ -4,6 +4,7 @@ let selectedProperty, selectedUser;
 export function addBookingRequest(request) {
   request.id = bookRequests.length;
   bookRequests.push(request);
+  console.log(bookRequests);
 }
 
 export function deleteBookingRequest(id) {

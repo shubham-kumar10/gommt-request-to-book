@@ -22,6 +22,8 @@ html {
 .form {
   display: flex;
   flex-direction: column;
+  margin: 30px;
+
   @media screen and (min-width: 600px) {
     position: absolute;
     top: 50%;
