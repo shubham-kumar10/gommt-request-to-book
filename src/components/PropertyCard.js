@@ -3,7 +3,6 @@ import Button from "./Button";
 import MMTAssured from "./MMTAssured";
 import Rating from "./Rating";
 import "../scss/components/_propertycard.scss";
-import { addBookingRequest } from "../mock-apis/book-request.mock";
 
 function PropertyCard({
   id,
@@ -13,10 +12,9 @@ function PropertyCard({
   price,
   amenities,
   images,
+  rating,
+  totalRatings,
 }) {
-  function addNewBooking() {
-    addBookingRequest();
-  }
   return (
     <div className="card">
       <section className="card__images">
@@ -40,7 +38,7 @@ function PropertyCard({
             <small>{location}</small>
             <small>{landmark}</small>
           </section>
-          <Rating />
+          <Rating rating={rating} totalRatings={totalRatings} />
         </section>
         <ul className="card__Details-amenities">
           {amenities.map((amenity) => (

@@ -17,6 +17,8 @@ function PropertyList() {
           price={property.price}
           amenities={property.amenities}
           images={[]}
+          rating={property.rating}
+          totalRatings={property.totalRatings}
         />
       ))}
     </div>

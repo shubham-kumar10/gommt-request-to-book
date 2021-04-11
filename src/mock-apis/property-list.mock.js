@@ -7,6 +7,8 @@ const propertyList = [
     price: 1200,
     amenities: [{ id: 1, name: "Caretacker" }],
     images: [],
+    rating: 4.1,
+    totalRatings: 345,
   },
   {
     id: 1,
@@ -16,6 +18,8 @@ const propertyList = [
     price: 1500,
     amenities: [{ id: 1, name: "Caretacker" }],
     images: [],
+    rating: 3.2,
+    totalRatings: 564,
   },
 ];
 
