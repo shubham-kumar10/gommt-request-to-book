@@ -1,3 +1,100 @@
+@import "../variables";
+
 .header {
   display: flex;
+  justify-content: space-between;
+  height: $height-lg-screens;
+  background-color: $color-dark;
+
+  &__home,
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    justify-content: space-between;
+  }
+
+  &__home {
+    height: $height-lg-screens;
+    box-sizing: border-box;
+  }
+
+  &__link {
+    border-bottom: 2px solid var(--bg-color-lg-screens);
+  }
+
+  &__link:hover {
+    border-bottom-color: yellow;
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__toggle {
+    display: none;
+    padding: 8px;
+    font-size: 16px;
+  }
+}
+
+.logo {
+  width: 100px;
+}
+
+/**
+*
+* Smaller screen + Mobile
+*
+*/
+@media screen and (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+
+    &__links {
+      flex-direction: column;
+
+      &.closed {
+        display: none;
+      }
+    }
+
+    &__toggle {
+      display: block;
+    }
+
+    &__link {
+      border-bottom: none;
+    }
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.material-icons.md-28 {
+  font-size: 28px;
+  color: white;
 }

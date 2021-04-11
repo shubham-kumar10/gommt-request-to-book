@@ -9,11 +9,13 @@ export default function Button({
   color,
   startIcon,
   endIcon,
+  ...otherProps
 }) {
   return (
     <button
       className={`btn ${variant} ${disableShadow} ${size} ${color}`}
       disabled={disabled}
+      {...otherProps}
     >
       <span className="material-icons">{startIcon}</span>
       {text}
