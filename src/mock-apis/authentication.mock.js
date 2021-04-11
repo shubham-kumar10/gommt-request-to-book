@@ -6,7 +6,16 @@ const users = [
     firstname: "John",
     lastname: "Doe",
     isHost: true,
-    propertyList: [],
+    hostId: 0,
+  },
+  {
+    id: 0,
+    email: "jerry@email.com",
+    password: "12345",
+    firstname: "Jerry",
+    lastname: "Doe",
+    isHost: false,
+    hostId: null,
   },
 ];
 

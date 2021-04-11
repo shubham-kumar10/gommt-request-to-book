@@ -8,6 +8,7 @@ function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+
   function handleSubmit(event) {
     event.preventDefault();
     const user = authenticate(email, password);
@@ -17,7 +18,8 @@ function Signin() {
   }
 
   return (
-    <div className="signin">
+    <div className="form signin">
+      <h2>Login</h2>
       <form className="signin__form">
         <Input
           label="Email"

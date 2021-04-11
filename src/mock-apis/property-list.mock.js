@@ -1,6 +1,6 @@
 const propertyList = [
   {
-    id: 1,
+    id: 0,
     name: "Goa Resort",
     location: "Railway Station",
     landmark: "260m from Railway Station",
@@ -9,6 +9,7 @@ const propertyList = [
     images: [],
     rating: 4.1,
     totalRatings: 345,
+    hostId: 0,
   },
   {
     id: 1,
@@ -16,10 +17,14 @@ const propertyList = [
     location: "Panaji",
     landmark: "100m from Club de Jakos",
     price: 1500,
-    amenities: [{ id: 1, name: "Caretacker" }],
+    amenities: [
+      { id: 1, name: "Caretacker" },
+      { id: 2, name: "Wi-Fi" },
+    ],
     images: [],
     rating: 3.2,
     totalRatings: 564,
+    hostId: 0,
   },
 ];
 

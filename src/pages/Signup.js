@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
+import Button from "../components/Button";
 import Input from "../components/Input";
+import { addUser } from "../mock-apis/authentication.mock";
 
 function Signup({ isHost }) {
   const [user, setUser] = useState({
@@ -14,8 +17,17 @@ function Signup({ isHost }) {
     setUser({ ...user }, (event.target.name = event.target.value));
   };
 
+  const history = useHistory();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    addUser({ user });
+    history.push("/");
+  }
+
   return (
-    <div>
+    <div className="form">
+      <h2>Sign Up</h2>
       <form>
         <Input
           label="Firstname"
@@ -42,6 +54,7 @@ function Signup({ isHost }) {
           handleChange={handleInputChange}
         />
       </form>
+      <Button onClick={handleSubmit} text="Sign In" color="primary" size="lg" />
     </div>
   );
 }

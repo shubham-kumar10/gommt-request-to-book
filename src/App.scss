@@ -18,3 +18,14 @@ html {
   margin: 0;
   padding: 0;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 600px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

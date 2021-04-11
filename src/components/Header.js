@@ -24,11 +24,11 @@ function Header({ startIcon, endIcon }) {
       </div>
       <ul className={"header__links " + (opened ? "opened" : "closed")}>
         <li className="header__link">
-          <Link to="/signup">Becoming a host</Link>
+          <Link to="/signup?isHost=true">Becoming a host</Link>
         </li>
 
         <li className="header__link">
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/signup?isHost=false">Sign Up</Link>
         </li>
         <li className="header__link">
           <Link to="/signin">Login</Link>
