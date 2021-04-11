@@ -3,6 +3,8 @@ import Button from "./Button";
 import MMTAssured from "./MMTAssured";
 import Rating from "./Rating";
 import "../scss/components/_propertycard.scss";
+import { useHistory } from "react-router";
+import { setProperty } from "../mock-apis/book-request.mock";
 
 function PropertyCard({
   id,
@@ -15,6 +17,23 @@ function PropertyCard({
   rating,
   totalRatings,
 }) {
+  const history = useHistory();
+
+  function handleBooking(event) {
+    setProperty({
+      id,
+      name,
+      location,
+      landmark,
+      price,
+      amenities,
+      images,
+      rating,
+      totalRatings,
+    });
+    history.push("/book");
+  }
+
   return (
     <div className="card">
       <section className="card__images">
@@ -53,7 +72,7 @@ function PropertyCard({
         </ul>
         <section className="card__details-price">
           <p>&#8377; {price}</p>
-          <Button color="danger" text="Book Now" />
+          <Button color="danger" text="Book Now" onClick={handleBooking} />
         </section>
       </section>
     </div>

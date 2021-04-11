@@ -13,9 +13,11 @@ function Signup({ isHost }) {
     isHost: isHost,
   });
 
-  const handleInputChange = (event) => {
-    setUser({ ...user }, (event.target.name = event.target.value));
-  };
+  function handleInputChange(event) {
+    const labelName = event.target.name;
+    const value = event.target.value;
+    setUser({ ...user, [labelName]: value });
+  }
 
   const history = useHistory();
 
@@ -32,29 +34,33 @@ function Signup({ isHost }) {
         <Input
           label="Firstname"
           type="text"
+          name="firstname"
           value={user.firstname}
           handleChange={handleInputChange}
         />
         <Input
           label="Lastname"
           type="text"
+          name="lastname"
           value={user.lastname}
           handleChange={handleInputChange}
         />
         <Input
           label="Email"
           type="text"
+          name="email"
           value={user.email}
           handleChange={handleInputChange}
         />
         <Input
-          label="Email"
+          label="Password"
           type="password"
+          name="password"
           value={user.password}
           handleChange={handleInputChange}
         />
       </form>
-      <Button onClick={handleSubmit} text="Sign In" color="primary" size="lg" />
+      <Button onClick={handleSubmit} text="Sign Up" color="primary" size="lg" />
     </div>
   );
 }

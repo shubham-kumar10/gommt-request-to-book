@@ -32,6 +32,7 @@ export function addUser({ user }) {
   if (users.findIndex((u) => u.email === user.email) < 0) {
     user.id = users.length;
     users.push(user);
+    console.log(users);
   } else {
     return null;
   }

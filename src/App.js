@@ -37,6 +37,7 @@ function App() {
           <Route path="/addProperty" component={PropertyList} />
           <Route path="/book" component={BookProperty} />
           <Route path="/signin" component={Signin} />
+          <Route path="/signin" component={Signin} />
         </Switch>
       </div>
     </userContext.Provider>

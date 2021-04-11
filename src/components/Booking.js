@@ -35,14 +35,14 @@ function Booking({
             startIcon="assistant"
             endIcon="info"
             size="x-small"
-            color="danger"
+            color="dark"
           />
         </div>
         <div>
           <Banner
             icon="info"
             bgcolor="dark"
-            text="MMT premium member he is lorem imspspidfjsifj dsfhdsjfhsdjfhsdjf "
+            text="MMT premium member he is has been rated GOOD by 21 Hosts."
           />
         </div>
       </section>
