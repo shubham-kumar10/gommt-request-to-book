@@ -21,11 +21,11 @@ export function deleteBookingRequest(id: number) {
   bookRequests.splice(id, 1);
 }
 
-export function handleBookingRequest(id: number, action) {
+export function handleBookingRequest(id: number, action: boolean) {
   bookRequests[id].isAccepted = action;
 }
 
-export function setProperty(property) {
+export function setProperty(property: Property) {
   selectedProperty = property;
 }
 
@@ -33,7 +33,7 @@ export function getSelectedProperty() {
   return selectedProperty;
 }
 
-export function setUser(property) {
+export function setUser(property: Property) {
   selectedProperty = property;
 }
 

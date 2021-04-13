@@ -1,19 +1,21 @@
-const users = [
+import { User } from './models';
+
+const users: User[] = [
   {
     id: 0,
-    email: "johndoe@email.com",
-    password: "12345",
-    firstname: "John",
-    lastname: "Doe",
+    email: 'johndoe@email.com',
+    password: '12345',
+    firstname: 'John',
+    lastname: 'Doe',
     isHost: true,
     hostId: 0,
   },
   {
     id: 0,
-    email: "jerry@email.com",
-    password: "12345",
-    firstname: "Jerry",
-    lastname: "Doe",
+    email: 'jerry@email.com',
+    password: '12345',
+    firstname: 'Jerry',
+    lastname: 'Doe',
     isHost: false,
     hostId: null,
   },
@@ -33,6 +35,7 @@ export function addUser({ user }) {
     user.id = users.length;
     users.push(user);
     console.log(users);
+    return true;
   } else {
     return null;
   }
