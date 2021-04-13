@@ -7,6 +7,14 @@ export function addBookingRequest(request) {
   console.log(bookRequests);
 }
 
+export function getBookingById(id) {
+  return bookRequests[id];
+}
+
+export function getAllBookings() {
+  return bookRequests;
+}
+
 export function deleteBookingRequest(id) {
   bookRequests.splice(id, 1);
 }

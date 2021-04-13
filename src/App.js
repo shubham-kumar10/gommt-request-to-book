@@ -1,17 +1,18 @@
-import "./App.scss";
-import Header from "./components/Header";
-import PropertyList from "./pages/PropertyList";
-import Signin from "./pages/Signin";
+import './App.scss';
+import Header from './components/Header';
+import PropertyList from './pages/PropertyList';
+import Signin from './pages/Signin';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   useLocation,
-} from "react-router-dom";
-import { useMemo, useState } from "react";
-import { userContext } from "./context/UserContext";
-import BookProperty from "./pages/BookProperty";
-import Signup from "./pages/Signup";
+} from 'react-router-dom';
+import { useMemo, useState } from 'react';
+import { userContext } from './context/UserContext';
+import BookProperty from './pages/BookProperty';
+import Signup from './pages/Signup';
+import BookingList from './pages/BookingList';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -31,13 +32,17 @@ function App() {
           <Route path="/" component={PropertyList} exact />
           <Route
             path="/signup"
-            isHost={query.get("isHost")}
+            isHost={query.get('isHost')}
             component={Signup}
           />
           <Route path="/addProperty" component={PropertyList} />
           <Route path="/book" component={BookProperty} />
           <Route path="/signin" component={Signin} />
-          <Route path="/signin" component={Signin} />
+          <Route
+            path="/booking"
+            bookingId={query.get('id')}
+            component={BookingList}
+          />
         </Switch>
       </div>
     </userContext.Provider>

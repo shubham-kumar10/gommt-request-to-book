@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { userContext } from "../context/UserContext";
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { userContext } from '../context/UserContext';
 
 function Header({ startIcon, endIcon }) {
   const [opened, setOpened] = useState(false);
@@ -29,7 +29,7 @@ function Header({ startIcon, endIcon }) {
         </button>
       </div>
       {!user ? (
-        <ul className={"header__links " + (opened ? "opened" : "closed")}>
+        <ul className={'header__links ' + (opened ? 'opened' : 'closed')}>
           <li className="header__link">
             <Link to="/signup?isHost=true">Becoming a host</Link>
           </li>
@@ -42,14 +42,14 @@ function Header({ startIcon, endIcon }) {
           </li>
         </ul>
       ) : (
-        <ul className={"header__links " + (opened ? "opened" : "closed")}>
+        <ul className={'header__links ' + (opened ? 'opened' : 'closed')}>
           {user.isHost ? (
             <li className="header__link">
               <Link to="/requests">Requests</Link>
             </li>
           ) : (
             <li className="header__link">
-              <Link to="/signin">Your Bookings</Link>
+              <Link to="/booking">Your Bookings</Link>
             </li>
           )}
           <li className="header__link" onClick={handleLogout}>

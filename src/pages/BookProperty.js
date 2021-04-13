@@ -1,26 +1,27 @@
-import React, { useContext, useState } from "react";
-import { useHistory } from "react-router";
-import Button from "../components/Button";
-import Input from "../components/Input";
-import { userContext } from "../context/UserContext";
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router';
+import Button from '../components/Button';
+import Input from '../components/Input';
+import { userContext } from '../context/UserContext';
 import {
   addBookingRequest,
   getSelectedProperty,
-} from "../mock-apis/book-request.mock";
+} from '../mock-apis/book-request.mock';
 
 function BookProperty() {
   const user = useContext(userContext);
   const property = getSelectedProperty();
 
   const [booking, setBooking] = useState({
-    id: "",
+    id: '',
     user: user,
     property: property,
     noOfAdults: 0,
     noOfChildren: 0,
-    checkIn: "",
-    checkOut: "",
-    duration: "",
+    checkIn: '',
+    checkOut: '',
+    duration: '',
+    timestamp: new Date(),
     price: property.price,
     isPaid: false,
   });
@@ -41,14 +42,14 @@ function BookProperty() {
     );
     booking.duration = duration;
     addBookingRequest(booking);
-    history.push("/");
+    history.push('/');
   }
 
   function calculateNoOfDays(date2, date1) {
     const diffTime = Math.abs(date2 - date1);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    console.log(diffTime + " milliseconds");
-    console.log(diffDays + " days");
+    console.log(diffTime + ' milliseconds');
+    console.log(diffDays + ' days');
     return diffDays;
   }
 
