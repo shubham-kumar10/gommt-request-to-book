@@ -1,13 +1,13 @@
-import React, { useContext, useState } from "react";
-import { useHistory } from "react-router";
-import Button from "../components/Button";
-import Input from "../components/Input";
-import { userContext } from "../context/UserContext";
-import { authenticate } from "../mock-apis/authentication.mock";
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router';
+import Button from '../components/Button';
+import Input from '../components/Input';
+import { userContext } from '../context/UserContext';
+import { authenticate } from '../mock-apis/authentication.mock';
 
 function Signin() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { setUser } = useContext(userContext);
   const history = useHistory();
 
@@ -16,7 +16,7 @@ function Signin() {
     const user = authenticate(email, password);
     if (user) {
       setUser(user);
-      history.push("/");
+      history.push('/');
     }
   }
 

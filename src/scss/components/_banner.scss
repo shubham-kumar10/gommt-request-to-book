@@ -2,7 +2,6 @@
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  color: white;
   margin: 5px;
   border-radius: 5px;
 
@@ -10,5 +9,9 @@
     display: flex;
     justify-content: center;
     margin: 0;
+  }
+
+  h5 {
+    margin: 10px;
   }
 }
