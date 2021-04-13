@@ -2,12 +2,7 @@ import './App.scss';
 import Header from './components/Header';
 import PropertyList from './pages/PropertyList';
 import Signin from './pages/Signin';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useLocation,
-} from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import { useMemo, useState } from 'react';
 import { userContext } from './context/UserContext';
 import BookProperty from './pages/BookProperty';

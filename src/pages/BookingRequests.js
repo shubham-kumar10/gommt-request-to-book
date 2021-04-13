@@ -32,7 +32,7 @@ function BookingRequests({
     month: 'short',
     day: 'numeric',
   });
-  const checkOutDay = new Date(checkIn).toLocaleDateString('default', {
+  const checkOutDay = new Date(checkOut).toLocaleDateString('default', {
     month: 'short',
     day: 'numeric',
   });
