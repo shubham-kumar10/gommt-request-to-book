@@ -1,13 +1,15 @@
-const bookRequests = [];
-let selectedProperty, selectedUser;
+import { BookingRequest, Property, User } from './models';
 
-export function addBookingRequest(request) {
+const bookRequests: BookingRequest[] = [];
+let selectedProperty: Property, selectedUser: User;
+
+export function addBookingRequest(request: BookingRequest) {
   request.id = bookRequests.length;
   bookRequests.push(request);
   console.log(bookRequests);
 }
 
-export function getBookingById(id) {
+export function getBookingById(id: number) {
   return bookRequests[id];
 }
 
@@ -15,11 +17,11 @@ export function getAllBookings() {
   return bookRequests;
 }
 
-export function deleteBookingRequest(id) {
+export function deleteBookingRequest(id: number) {
   bookRequests.splice(id, 1);
 }
 
-export function handleBookingRequest(id, action) {
+export function handleBookingRequest(id: number, action) {
   bookRequests[id].isAccepted = action;
 }
 

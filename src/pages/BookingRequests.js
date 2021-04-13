@@ -16,8 +16,7 @@ function BookingRequests({
   price,
   isPaid,
 }) {
-  console.log(checkIn);
-  const expiryDate = timestamp.setHours(timestamp.getHours() + 48);
+  const expiryDate = new Date(timestamp.setHours(timestamp.getHours() + 48));
   const formattedExpiryDate = expiryDate.toLocaleString('en-US', {
     hour: 'numeric',
     minute: 'numeric',
@@ -25,6 +24,7 @@ function BookingRequests({
     month: 'short',
     day: 'numeric',
   });
+  console.log(new Date(checkIn), noOfAdults + noOfChildren);
   const headline = `You have a new booking request from ${user.firstname}.
   It will expire by ${formattedExpiryDate}`;
   const messageHeading = `Message from ${user.firstname}`;

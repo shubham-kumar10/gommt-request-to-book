@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
-import Booking from '../components/Booking';
 import { userContext } from '../context/UserContext';
-import { getAllBookings, getBookingById } from '../mock-apis/book-request.mock';
+import { getAllBookings } from '../mock-apis/book-request.mock';
 import BookingRequests from './BookingRequests';
 
 function BookingList({ id }) {
