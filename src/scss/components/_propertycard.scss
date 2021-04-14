@@ -26,12 +26,15 @@
     flex-direction: column;
 
     &-selected {
-      width: 218px;
+      width: 250px;
       margin: 0rem;
+      height: 218px;
+      object-fit: cover;
 
       @media only screen and (max-width: 600px) {
         flex-grow: 1;
         object-fit: fill;
+        width: 395px;
       }
     }
 
@@ -96,7 +99,7 @@
     background-color: #e8e8e8;
     align-items: flex-end;
     padding: 15px;
-    z-index: -1;
+    border-radius: 10px;
 
     &-save {
       font-size: small;

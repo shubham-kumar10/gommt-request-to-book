@@ -50,18 +50,10 @@ function PropertyCard({
         <section className="card__images">
           <figure className="card__images-selected">
             <img
-              src="https://source.unsplash.com/random/218x218"
+              className="card__images-selected"
+              src={images[0]}
               alt="Random Hotels"
             />
-          </figure>
-          <figure className="card__images-thumbnails">
-            {[1, 2, 3, 4].map((i) => (
-              <img
-                key={i}
-                src="https://source.unsplash.com/random/50x50"
-                alt="Random Hotels"
-              />
-            ))}
           </figure>
         </section>
         <section className="card__details">

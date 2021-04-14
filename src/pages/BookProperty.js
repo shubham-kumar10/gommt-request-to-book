@@ -9,12 +9,11 @@ import {
 } from '../mock-apis/book-request.mock';
 
 function BookProperty() {
-  const user = useContext(userContext);
+  const context = useContext(userContext);
   const property = getSelectedProperty();
-
   const [booking, setBooking] = useState({
     id: '',
-    user: user,
+    user: context.user,
     property: property,
     noOfAdults: 0,
     noOfChildren: 0,
@@ -26,13 +25,16 @@ function BookProperty() {
     isPaid: false,
   });
 
+  const history = useHistory();
+  if (!context.user) {
+    history.push('/signin');
+  }
+
   function handleInputChange(event) {
     const labelName = event.target.name;
     const value = event.target.value;
     setBooking({ ...booking, [labelName]: value });
   }
-
-  const history = useHistory();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -53,6 +55,11 @@ function BookProperty() {
     return diffDays;
   }
 
+  function setTargetDate() {
+    var checkInDate = new Date(booking.checkIn).toISOString().split('T')[0];
+    document.getElementsByName('checkOut')[0].setAttribute('min', checkInDate);
+  }
+
   return (
     <div className="form">
       <h3>Booking Details</h3>
@@ -61,6 +68,7 @@ function BookProperty() {
           label="Check In"
           type="date"
           name="checkIn"
+          min={new Date().toISOString().split('T')[0]}
           shrink={true}
           value={booking.checkIn}
           handleChange={handleInputChange}
@@ -68,6 +76,7 @@ function BookProperty() {
         <Input
           label="Check Out"
           type="date"
+          onClick={setTargetDate}
           name="checkOut"
           shrink={true}
           value={booking.checkOut}

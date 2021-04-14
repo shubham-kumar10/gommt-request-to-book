@@ -1,21 +1,15 @@
-import React from "react";
-import Button from "./Button";
-import "../scss/components/_booking.scss";
-import Pillbox from "./Pillbox";
-import Tag from "./Tag";
-import Banner from "./Banner";
+import React, { useState } from 'react';
+import Button from './Button';
+import '../scss/components/_booking.scss';
+import Pillbox from './Pillbox';
+import Tag from './Tag';
+import Banner from './Banner';
+import { getBookingById } from '../mock-apis/book-request.mock';
 
-function Booking({
-  id,
-  user,
-  name,
-  noOfGuests,
-  checkIn,
-  checkOut,
-  duration,
-  price,
-  isPaid,
-}) {
+function Booking({ id }) {
+  const initialState = getBookingById(id);
+  const [booking] = useState(initialState);
+
   return (
     <div className="booking">
       <section className="booking__header">
@@ -29,7 +23,7 @@ function Booking({
           />
         </div>
         <div className="booking__header-details">
-          {user.name}
+          {booking.user.name}
           <Tag
             text="MMTBLACK"
             startIcon="assistant"
@@ -56,26 +50,27 @@ function Booking({
           <tbody>
             <tr>
               <td>Property Name</td>
-              <td className="text-right bold">{name}</td>
+              <td className="text-right bold">{booking.property.name}</td>
             </tr>
             <tr>
               <td>Check In</td>
-              <td className="text-right bold">{checkIn}</td>
+              <td className="text-right bold">{booking.checkIn}</td>
             </tr>
             <tr>
               <td>Check out</td>
-              <td className="text-right bold">{checkOut}</td>
+              <td className="text-right bold">{booking.checkOut}</td>
             </tr>
             <tr>
               <td>No. of Guest(s)</td>
               <td className="text-right bold">
-                {noOfGuests.adults},
-                {noOfGuests.children > 0 && `${noOfGuests.children} Children`}
+                {booking.noOfGuests.adults},
+                {booking.noOfGuests.children > 0 &&
+                  `${booking.noOfGuests.children} Children`}
               </td>
             </tr>
             <tr>
               <td>Stay Duration</td>
-              <td className="text-right bold">{duration}Nights</td>
+              <td className="text-right bold">{booking.duration}Nights</td>
             </tr>
             <tr>
               <td>Meal Plan</td>
@@ -83,7 +78,7 @@ function Booking({
             </tr>
             <tr>
               <td>Payment Status</td>
-              {isPaid && <td className="text-right bold">Paid</td>}
+              {booking.isPaid && <td className="text-right bold">Paid</td>}
             </tr>
           </tbody>
         </table>
@@ -92,11 +87,11 @@ function Booking({
         <table>
           <tr>
             <td className="text-left">Booking Amount</td>
-            <td className="text-right">{price}</td>
+            <td className="text-right">{booking.price}</td>
           </tr>
           <tr>
             <td className="text-left">Your Share Of Earnings</td>
-            <td className="text-right">{0.13 * price}</td>
+            <td className="text-right">{0.13 * booking.price}</td>
           </tr>
         </table>
       </section>
