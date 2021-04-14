@@ -1,30 +1,135 @@
+const amenities = [
+  {
+    id: 0,
+    icon: 'done',
+    name: 'Caretaker',
+  },
+  {
+    id: 1,
+    icon: 'wifi',
+    name: 'Wi-Fi',
+  },
+  {
+    id: 2,
+    icon: 'spa',
+    name: 'Spa',
+  },
+  {
+    id: 3,
+    icon: 'beach_access',
+    name: 'Nearby Beach',
+  },
+  {
+    id: 4,
+    icon: 'weekend',
+    name: 'Lounge',
+  },
+  {
+    id: 5,
+    icon: 'local_parking',
+    name: 'Free Parking',
+  },
+  {
+    id: 6,
+    icon: 'child_care',
+    name: 'Child Care',
+  },
+];
+
+const propertyType = [
+  {
+    id: 0,
+    color: 'warn',
+    name: 'Resort',
+  },
+  {
+    id: 1,
+    color: 'primary',
+    name: 'Hotel',
+  },
+  {
+    id: 2,
+    color: 'danger',
+    name: 'Apartment',
+  },
+  {
+    id: 3,
+    color: 'success',
+    name: 'Villa',
+  },
+  {
+    id: 4,
+    color: 'danger',
+    name: 'Hostel',
+  },
+  {
+    id: 5,
+    color: 'secondary',
+    name: 'BnB',
+  },
+  {
+    id: 6,
+    color: 'info',
+    name: 'Guest House',
+  },
+];
+
 const propertyList = [
   {
     id: 0,
-    name: "Goa Resort",
-    location: "Railway Station",
-    landmark: "260m from Railway Station",
+    name: 'Goa Chills',
+    location: 'Railway Station',
+    landmark: '260m from Railway Station',
     price: 1200,
-    amenities: [{ id: 1, name: "Caretacker" }],
+    amenities: [amenities[0], amenities[3], amenities[2]],
     images: [],
     rating: 4.1,
     totalRatings: 345,
     hostId: 0,
+    propertyType: propertyType[1],
+    discount: 0.1,
   },
   {
     id: 1,
-    name: "Sunny Beach Resort",
-    location: "Panaji",
-    landmark: "100m from Club de Jakos",
+    name: 'Sunny Beach Resort',
+    location: 'Panaji',
+    landmark: '100m from Club de Jakos',
     price: 1500,
-    amenities: [
-      { id: 1, name: "Caretacker" },
-      { id: 2, name: "Wi-Fi" },
-    ],
+    amenities: [amenities[0], amenities[1], amenities[4]],
     images: [],
     rating: 3.2,
     totalRatings: 564,
     hostId: 0,
+    propertyType: propertyType[0],
+    discount: 0.23,
+  },
+  {
+    id: 2,
+    name: 'Bed & BreakFast',
+    location: 'Panaji',
+    landmark: '100m from Air Port',
+    price: 800,
+    amenities: [amenities[2], amenities[1], amenities[4]],
+    images: [],
+    rating: 4,
+    totalRatings: 564,
+    hostId: 0,
+    propertyType: propertyType[5],
+    discount: 0,
+  },
+  {
+    id: 3,
+    name: 'Hotel New York',
+    location: 'Panaji',
+    landmark: '100m from Air Port',
+    price: 1800,
+    amenities: [amenities[1], amenities[4], amenities[5]],
+    images: [],
+    rating: 4,
+    totalRatings: 564,
+    hostId: 0,
+    propertyType: propertyType[5],
+    discount: 0.45,
   },
 ];
 

@@ -1,8 +1,10 @@
-import React from "react";
-import "../scss/components/_pillbox.scss";
+import React from 'react';
+import '../scss/components/_pillbox.scss';
 
-function Pillbox({ type, text, size }) {
-  return <div className={`pillbox ${type} ${size}`}>{text}</div>;
+function Pillbox({ type, text, size, bgcolor }) {
+  return (
+    <div className={`pillbox color-${type} ${size} bg-${bgcolor}`}>{text}</div>
+  );
 }
 
 export default Pillbox;
