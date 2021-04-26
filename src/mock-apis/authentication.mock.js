@@ -21,7 +21,7 @@ const users = [
 
 export function authenticate(email, password) {
   const id = users.findIndex((user) => user.email === email);
-  if (id > 0 && users[id].password === password) {
+  if (id > -1 && users[id].password === password) {
     return users[id];
   } else {
     return undefined;

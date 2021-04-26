@@ -41,17 +41,20 @@ function Header({ startIcon, endIcon }) {
             <Link to="/signin">Login</Link>
           </li>
         </ul>
+      ) : user.isHost ? (
+        <ul className={'header__links ' + (opened ? 'opened' : 'closed')}>
+          <li className="header__link">
+            <Link to="/booking">Requests</Link>
+          </li>
+          <li className="header__link" onClick={handleLogout}>
+            <Link to="/">Logout</Link>
+          </li>
+        </ul>
       ) : (
         <ul className={'header__links ' + (opened ? 'opened' : 'closed')}>
-          {user.isHost ? (
-            <li className="header__link">
-              <Link to="/requests">Requests</Link>
-            </li>
-          ) : (
-            <li className="header__link">
-              <Link to="/booking">Your Bookings</Link>
-            </li>
-          )}
+          <li className="header__link">
+            <Link to={`/booking/${user.id}`}>Your Bookings</Link>
+          </li>
           <li className="header__link" onClick={handleLogout}>
             <Link to="/">Logout</Link>
           </li>

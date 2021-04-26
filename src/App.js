@@ -8,6 +8,7 @@ import { userContext } from './context/UserContext';
 import BookProperty from './pages/BookProperty';
 import Signup from './pages/Signup';
 import BookingList from './pages/BookingList';
+import Booking from './components/Booking';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -32,12 +33,10 @@ function App() {
           />
           <Route path="/addProperty" component={PropertyList} />
           <Route path="/book" component={BookProperty} />
+          <Route path="/request/:id" component={Booking} />
           <Route path="/signin" component={Signin} />
-          <Route
-            path="/booking"
-            bookingId={query.get('id')}
-            component={BookingList}
-          />
+          <Route path="/booking" component={BookingList} />
+          <Route path="/booking/:userid" component={BookingList} />
         </Switch>
       </div>
     </userContext.Provider>

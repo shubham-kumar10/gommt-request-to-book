@@ -1,4 +1,62 @@
-# Getting Started with Create React App
+# Hotel Booking Application
+
+Make My Trip Hotel booking clone using React. The Application has two target users :
+
+1. Host : Can List property and approve requests based on his properties.
+2. Guest: Can book property for stay.
+
+## Build using:
+
+1. HTML
+2. SCSS
+3. JavaScript - React
+
+#### Available Screens:
+
+<div style="display: flex;justify-content:space-around">
+  <figure>
+    <img
+      height="300"
+      width="200"
+      src="https://user-images.githubusercontent.com/18024497/114661707-0fce8980-9d15-11eb-8b10-a524072cf053.png"
+    />
+  </figure>
+  <figure>
+    <img
+      height="300"
+      width="200"
+      src="https://user-images.githubusercontent.com/18024497/114661710-11984d00-9d15-11eb-888b-f699441c95bc.png"
+    />
+  </figure>
+  <figure>
+    <img
+      height="300"
+      width="200"
+      src="https://user-images.githubusercontent.com/18024497/114661711-11984d00-9d15-11eb-9d13-70b18225393c.png"
+    />
+  </figure>
+  <figure>
+    <img
+      height="300"
+      width="200"
+      src="https://user-images.githubusercontent.com/18024497/114661714-12c97a00-9d15-11eb-88ec-533994995ed4.png"
+    />
+  </figure>
+  <figure>
+    <img
+      height="300"
+      width="200"
+      src="https://user-images.githubusercontent.com/18024497/114661716-13621080-9d15-11eb-9b4f-9b42c29b9638.png"
+    />
+  </figure>
+  <figure>
+    <img
+      height="400"
+      width="800"
+      src="https://user-images.githubusercontent.com/18024497/114661701-0d6c2f80-9d15-11eb-8e6b-efdbd3a10a64.png"
+    />
+  </figure>
+</div>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

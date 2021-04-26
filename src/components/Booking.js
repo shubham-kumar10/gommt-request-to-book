@@ -4,21 +4,36 @@ import '../scss/components/_booking.scss';
 import Pillbox from './Pillbox';
 import Tag from './Tag';
 import Banner from './Banner';
-import { getBookingById } from '../mock-apis/book-request.mock';
+import {
+  getBookingById,
+  handleBookingRequest,
+} from '../mock-apis/book-request.mock';
+import { useHistory } from 'react-router';
 
-function Booking({ id }) {
-  const initialState = getBookingById(id);
+function Booking(props) {
+  console.log(props);
+  const initialState = getBookingById(props.match.params.id);
   const [booking] = useState(initialState);
+  const history = useHistory();
 
+  function handleRequestAccept() {
+    handleBookingRequest(booking.id, true);
+    history.push('/booking');
+  }
+
+  function handleRequestReject() {
+    handleBookingRequest(booking.id, false);
+    history.push('/booking');
+  }
   return (
     <div className="booking">
       <section className="booking__header">
         <div className="booking__header-icons">
           <Pillbox text="booking request" size="small" type="primary" />
           <Tag
-            text="Expires in 12 hours"
+            text={`Expires in 2 days`}
             startIcon="timer"
-            size="x-small"
+            size="small"
             color="danger"
           />
         </div>
@@ -35,8 +50,10 @@ function Booking({ id }) {
         <div>
           <Banner
             icon="info"
-            bgcolor="dark"
-            text="MMT premium member he is has been rated GOOD by 21 Hosts."
+            bgcolor="info"
+            textcolor="dark"
+            heading="MMT Premium Member"
+            text={`${booking.user.firstname} is a premium MMT member.`}
           />
         </div>
       </section>
@@ -63,9 +80,9 @@ function Booking({ id }) {
             <tr>
               <td>No. of Guest(s)</td>
               <td className="text-right bold">
-                {booking.noOfGuests.adults},
-                {booking.noOfGuests.children > 0 &&
-                  `${booking.noOfGuests.children} Children`}
+                {booking.noOfAdults}
+                {booking.noOfChildren > 0 &&
+                  ` Adults , ${booking.noOfChildren} Children`}
               </td>
             </tr>
             <tr>
@@ -99,8 +116,16 @@ function Booking({ id }) {
         <p>Special Request</p>
         <small>Early checkin</small>
         <div className="booking__footer-buttons">
-          <Button text="Decline" variant="outline" />
-          <Button text="Approve" color="primary" />
+          <Button
+            text="Decline"
+            variant="outline"
+            onClick={handleRequestReject}
+          />
+          <Button
+            text="Approve"
+            color="primary"
+            onClick={handleRequestAccept}
+          />
         </div>
       </section>
     </div>

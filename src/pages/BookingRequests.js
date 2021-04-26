@@ -17,7 +17,6 @@ function BookingRequests({
   price,
   isPaid,
 }) {
-  console.log(checkIn);
   const expiryDate = new Date(timestamp.setHours(timestamp.getHours() + 48));
   const formattedExpiryDate = expiryDate.toLocaleString('en-US', {
     hour: 'numeric',
@@ -38,7 +37,7 @@ function BookingRequests({
   });
   const messageHeading = `Message from ${user.firstname}`;
   message = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error perspiciatis obcaecati odio esse quos recusandae, quis, qui nostrum ullam sapiente accusantium et mollitia officiis, pariatur facilis omnis placeat dolores unde?`;
-  const routerLinkPath = `/booking?id=${id}`;
+  const routerLinkPath = `/request/${id}`;
 
   return (
     <div className="bookingRequest">
